@@ -58,10 +58,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void on_button_click(View view) {
 
+            int scorecount = 0;
+            int score = 0;
+
 
             TextView tv = this.findViewById(R.id.numview);
             TextView gs = this.findViewById(R.id.guessview);
             TextView ms = this.findViewById(R.id.messageview);
+            TextView S = this.findViewById(R.id.SCORE);
 
             int generatednumber = Integer.valueOf(tv.getText().toString());
             int user = Integer.valueOf(gs.getText().toString());
@@ -74,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
 
             if (generatednumber == user) {
                 ms.setText("Congratulations");
+                 score++;
+                 scorecount= scorecount+score;
+                S.setText(Integer.toString(number));
             }
 
         }
