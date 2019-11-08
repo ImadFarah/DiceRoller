@@ -58,14 +58,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void on_button_click(View view) {
 
-        TextView tv = this.findViewById(R.id.numview);
 
+            TextView tv = this.findViewById(R.id.numview);
+            TextView gs = this.findViewById(R.id.guessview);
+            TextView ms = this.findViewById(R.id.messageview);
 
-        Random numberGenerated = new Random();
+            int generatednumber = Integer.valueOf(tv.getText().toString());
+            int user = Integer.valueOf(gs.getText().toString());
 
-        int numberGen = numberGenerated.nextInt(6);
+            Random numberGenerated = new Random();
 
-        tv.setText(Integer.toString(numberGen));
+            int number = numberGenerated.nextInt(6);
+
+            tv.setText(Integer.toString(number));
+
+            if (generatednumber == user) {
+                ms.setText("Congratulations");
+            }
+
+        }
+
 
     }
-}
+
